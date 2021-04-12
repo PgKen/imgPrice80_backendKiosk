@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap");
+body {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+  body .boxImg {
+    display: flex;
+    flex-direction: column;
+    background-color: #c5c8ca;
+    margin-top: 50px;
+    font-family: 'Kanit', sans-serif;
+    width: 650px; }
+    body .boxImg ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: row; }
+      body .boxImg ul li {
+        flex: 1;
+        display: flex;
+        justify-content: center; }
+      body .boxImg ul li.menu {
+        flex: 1; }
+      body .boxImg ul li.content {
+        flex: 4;
+        display: flex; }
+        body .boxImg ul li.content ul {
+          flex: 1;
+          display: flex;
+          flex-direction: column; }
+          body .boxImg ul li.content ul li {
+            display: flex;
+            flex-direction: row; }
+            body .boxImg ul li.content ul li span {
+              flex: 1; }
+              body .boxImg ul li.content ul li span select {
+                font-size: 14px; }
+            body .boxImg ul li.content ul li button {
+              padding: 2px 10px;
+              font-size: 22px; }
+      body .boxImg ul li.banner {
+        padding: 10px 0;
+        background-color: #6f7c7b;
+        font-size: 24px;
+        color: #e3f345; }
+    body .boxImg ul.header {
+      font-size: 24px; }
+  body .listProduct {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #CCC;
+    width: 650px;
+    font-family: 'Kanit', sans-serif;
+    width: 650px; }
+    body .listProduct ul {
+      flex: 1;
+      display: flex;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      flex-direction: row; }
+      body .listProduct ul li {
+        display: flex;
+        flex: 1;
+        border-bottom: 1px solid #CCC;
+        border-left: 1px solid #CCC;
+        justify-content: center;
+        align-items: center; }
+        body .listProduct ul li img {
+          width: 50px; }
+      body .listProduct ul li:nth-child(1) {
+        flex: 0.5; }
+      body .listProduct ul li:nth-last-child(1) {
+        flex: 0.5; }
+    body .listProduct ul.headList {
+      background-color: #009688;
+      padding: 10px;
+      font-size: 22px; }
+    body .listProduct ul.btnPage {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      list-style: none; }
+      body .listProduct ul.btnPage li {
+        display: flex;
+        flex: 1;
+        cursor: pointer;
+        margin: 2px;
+        background-color: #8BC34A; }
+        body .listProduct ul.btnPage li:hover {
+          background-color: orange; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/sam" method="post">
+        
+        <input type="text" name="name">
+        <input  id="data" type="hidden" name="data">
+        <!-- <button type="button">xxx</button> -->
+        <button onclick="test(event,this.form)" type="button">ตกลง</button>
+    </form>
+</body>
+
+<script>
+    let data = [1,2,3,5,8,9]
+    document.getElementById('data').value = data
+    
+    
+        function test(e){
+            console.log("e");
+            console.log(e.target);
+            e.preventDefault
+        }
+    
+</script>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <div class="boxImg">
+    <ul class="header">
+      <li style="background-color: white; padding:10px 0px;">
+        <img style="width: 125px;" src="https://taladsrimuang.com/site/img/logo_srimaung.png" alt="">
+      </li>
+    </ul>
+    <ul>
+      <li class="banner">เลือกภาพ ผัก-ผลไม้</li>
+    </ul>
+    <form action="/upload" method="post" encType="multipart/form-data">
+      <ul>
+        <li class="menu">&nbsp;</li>
+        <li class="content">
+          <ul>
+
+            <li>&nbsp;</li>
+            <li>
+              <span>ค้นหา </span>
+              <span>
+                <input id="sename" type="text" onkeyup="imgSearch()" value="<%=txtSearch%>">
+              </span>
+              <span>
+                <img id="load" style="width: 28px;" src="../images/load.gif" alt="">
+              </span>
+            </li>
+            <li>&nbsp;</li>
+            <li>
+              <span>เลือกสินค้า</span>
+              <span>
+                <select name="id_product" id="id_product">
+                  <option value="0">-โปรดเลือก-</option>
+                  <% for(let i = 0; i < dataProduct.length; i++ ) { %>
+                  <option value="<%= dataProduct[i].id_product %>"><%=dataProduct[i].name_pro %> </option>
+                  <% } %>
+                </select>
+              </span>
+              <span>
+                <input type="file" name="sampleFile" id="sampleFile">
+              </span>
+            </li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li><button type="submit">Upload</button></li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+          </ul>
+        </li>
+      </ul>
+    </form>
+  </div>
+  <div class="listProduct">
+    <ul class="btnPage">
+      <% for(let i =0; i < numBtn; i ++){ %>
+      <li onclick="fnBtn(<%=i%>)">
+        <%=(i+1)%></li>
+      <% } %>
+    </ul>
+    <ul class="headList">
+      <li>id</li>
+      <li>name</li>
+      <li>pic</li>
+      <li>del</li>
+    </ul>
+    <div class="boxList" id="boxList">
+      <% for(let i =0; i < dataImg.length; i ++){ %>
+      <ul>
+        <li><%= dataImg[i].id_product %></li>
+        <li><%= dataImg[i].name_pro %></li>
+        <li>
+          <img src="./upload/<%= dataImg[i].name_img %>" alt="">
+        </li>
+        <li>
+          <span class="material-icons" style="color:orangered;cursor: pointer;"
+            onclick="delImg(<%=dataImg[i].auto_id%>)">
+            delete_forever
+          </span>
+        </li>
+      </ul>
+      <% } %>
+    </div>
+  </div>
+</body>
+
+<script>
+  $(document).ready(function () {
+    $('#load').hide()
+    var num = $('#sename').val();
+    $('#sename').focus().val('').val(num);
+  });
+
+  //document.getElementById("sename").focus();
+
+  function delImg(id) {
+    var r = confirm("ต้องการลบ !!");
+    if (r == true) {
+      location.href = "../del/" + id
+    } else {
+      return false;
+    }
+
+  }
+
+  function imgSearch() {
+    $('#load').show()
+    let x = document.getElementById('sename').value
+    console.log(x)
+    location.href = "../search/" + x
+  }
+
+  function fnBtn(i) {
+    location.href = "../" + i
+  }
+</script>
+
+</html>
